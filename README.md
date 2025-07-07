@@ -132,7 +132,7 @@ The following improvements are planned for future releases:
 -
 -
 -
--
+- Grok AI
 
 
 ## Acknowledgments
