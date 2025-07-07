@@ -10,6 +10,9 @@ import sys
 import os
 import nltk
 import random
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('averaged_perceptron_tagger_eng')
 from nltk.corpus import wordnet
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.load_data import *
@@ -17,6 +20,8 @@ import warnings
 from sklearn.metrics import precision_recall_fscore_support as score
 from sklearn.metrics import accuracy_score
 from tqdm import tqdm
+import os
+print("Current working directory:", os.getcwd())
 
 # Download required NLTK datasets
 nltk.download('wordnet', quiet=True)
