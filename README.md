@@ -125,19 +125,7 @@ The following improvements are planned for future releases:
 
 **Why**: This simple "noising" teaches the model to ignore exact keywords and focus on meaning, improving generalization and robustness.
 
-## Contributors
-
-- 
--
--
--
--
-- Grok AI
-
-
 ## Acknowledgments
 
 This project was developed as part of **BITS F464: Machine Learning** course at **Birla Institute of Technology & Science, Pilani**.
-
-## License
 
