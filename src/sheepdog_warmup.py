@@ -179,9 +179,8 @@ def set_seed(seed):
         torch.cuda.manual_seed_all(seed)
 
 def train_model(tokenizer, max_len, n_epochs, batch_size, datasetname, iter):
-    # Create directories for checkpoints and logs
+    # Create directories for checkpoints
     os.makedirs('checkpoints', exist_ok=True)
-    os.makedirs('logs', exist_ok=True)
 
     # Load original and adversarial test sets (A, B, C, D)
     x_train, x_test, x_test_a, x_test_b, x_test_c, x_test_d, y_train, y_test = load_articles(datasetname)
@@ -381,7 +380,7 @@ tokenizer = RobertaTokenizer.from_pretrained("roberta-base")
 n_epochs = args.n_epochs
 iterations = args.iters
 
-os.makedirs('logs', exist_ok=True)
+os.makedirs(os.path.join('SheepDog', 'logs'), exist_ok=True)
 
 test_accs = []
 prec_all, rec_all, f1_all = [], [], []
@@ -453,7 +452,7 @@ print(f"Restyle_Average_Test_Accuracy: {sum(test_accs_res)/iterations:.4f}|"
       f"Rec_Macro: {sum(rec_all_res)/iterations:.4f}|"
       f"F1_Macro: {sum(f1_all_res)/iterations:.4f}")
 
-log_file = os.path.join('logs', f'log_{datasetname}_{args.model_name}_iter{iterations}.txt')
+log_file = os.path.join('SheepDog', 'logs', f'log_{datasetname}_{args.model_name}_iter{iterations}.txt')
 with open(log_file, 'a+') as f:
     f.write('-------------Original-------------\n')
     f.write(f'All Acc.s:{test_accs}\n')

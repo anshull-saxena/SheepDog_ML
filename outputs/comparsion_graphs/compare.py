@@ -160,7 +160,7 @@ def main():
             print(f"Error parsing {path}: {str(e)}")
             return
 
-    output_dir = Path("comparison_outputs")
+    output_dir = Path("SheepDog/outputs/comparsion_graphs")
     os.makedirs(output_dir, exist_ok=True)
 
     print("Creating comparison visualizations...")
